@@ -1,0 +1,140 @@
+:root {
+  --background: 20 14.3% 4.1%;
+  --foreground: 60 9.1% 97.8%;
+  --card: 20 14.3% 4.1%;
+  --card-foreground: 60 9.1% 97.8%;
+  --popover: 20 14.3% 4.1%;
+  --popover-foreground: 60 9.1% 97.8%;
+  --primary: 20.5 90.2% 48.2%;
+  --primary-foreground: 60 9.1% 97.8%;
+  --secondary: 12 6.5% 15.1%;
+  --secondary-foreground: 60 9.1% 97.8%;
+  --muted: 12 6.5% 15.1%;
+  --muted-foreground: 24 5.4% 63.9%;
+  --accent: 12 6.5% 15.1%;
+  --accent-foreground: 60 9.1% 97.8%;
+  --destructive: 0 72.2% 50.6%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --border: 12 6.5% 15.1%;
+  --input: 12 6.5% 15.1%;
+  --ring: 20.5 90.2% 48.2%;
+  --radius: 0.5rem;
+}
+
+/* RESETANDO ESTILOS PADRÕES DO NAVEGADOR */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+  font-family: sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 1rem;
+
+  background-color: hsl(var(--secondary) / 0.8);
+  padding: 0.6rem;
+  border-radius: var(--radius);
+  backdrop-filter: blur(200px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div.main-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      text-decoration: none;
+      color: hsl(var(--primary-foreground));
+
+      div.logo {
+        background-color: hsl(var(--primary));
+        width: fit-content;
+        padding: 0.4rem 0.5rem;
+        border-radius: var(--radius);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid hsl(var(--primary-foreground));
+
+        span {
+          line-height: 1;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 1.3rem;
+    }
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+
+      li {
+        a {
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          border-radius: var(--radius);
+          background-color: hsl(var(--primary) / 0.1);
+          color: hsl(var(--primary));
+
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: hsl(var(--primary) / 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+div.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  min-height: 100vh;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  item-align: center;
+  padding: 3rem;
+  background-color: hsl(var(--secondary) / 0.2);
+  margin-top: 7rem;
+  border-top: 1px solid hsl(var(--border));
+
+  a {
+    text-decoration: none;
+    color: hsl(var(--primary) / 0.8);
+    font-weight: bold;
+
+    &:hover {
+      color: hsl(var(--primary));
+    }
+  }
+}
